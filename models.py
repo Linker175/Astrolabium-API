@@ -1,10 +1,9 @@
-from sqlalchemy import Column, Integer, Float, Date
-from apidb import Base
+from sqlalchemy import Column, Integer, Date, JSON
+from db import Base
 
 class DataDay(Base):
-    __tablename__ = 'dataday'
+    __tablename__ = 'testwithdict'
     id = Column(Integer, primary_key=True)
     simudate = Column(Date)
     sample = Column(Integer)
-    for i in range(1, 181):
-       locals()[f'day{i}'] = Column(Float)
+    days = Column(JSON)
